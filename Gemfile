@@ -52,3 +52,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# For use of symbols as fonts
+gem "font-awesome-sass", "~> 5.12.0"
+# Css Framework
+gem "tailwindcss-rails", "~> 0.3.3"
+# For a env file
+gem 'dotenv-rails', groups: [:development, :test]
