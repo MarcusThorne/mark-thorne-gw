@@ -4,7 +4,7 @@
     <div class="slide hidden space-y-6 relative">
       <%= image_tag "building#{i+1}.jpg", class:"opacity-60 2xl:h-screen w-full object-cover" %>
       <div class="absolute top-1/2 left-1/2 mt-20 -ml-20 w-1/2" style="transform: translate(-50%, -50%); width: 45rem;">
-        <h1 class="text-9xl text-white mb-8 flex"><%= s %><i class="fas fa-circle text-yellow-300 text-sm ml-2 mt-24"></i></h1>
+        <h1 class="text-9xl text-white mb-8 flex"><%= s[:name] %><i class="fas fa-circle text-yellow-300 text-sm ml-2 mt-24"></i></h1>
         <p class="text-xl text-white">As a general contractor, we first create the highest level of trust and itegrity with our clients. We value our role in the success of your project.</p>
       </div>
     </div>
@@ -19,7 +19,7 @@
 <!-- /Spacer -->
 
 <!-- Company info -->
-<div class="flex flex-col xl:flex-row w-full">
+<div class="flex flex-col xl:flex-row w-full" id="aboutUs">
   <div class="min-w-1/2 bg-black text-white p-20 py-56">
     <h1 class="text-7xl mb-20">Hey there<i class="fas fa-circle text-blue-500 text-sm ml-2"></i></h1>
     <p class="text-xl mb-20">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia natus laudantium iusto ipsam pariatur. At excepturi similique rerum magnam voluptatibus cum eius odit temporibus, ab expedita, accusamus laborum pariatur modi.</p>
@@ -29,16 +29,19 @@
   <div class="grid grid-cols-2">
     <% @professions.each do |s| %>
       <div class="bg-white border p-20">
-        <!-- Hexagon Background -->
-        <div class="relative mb-10">
-          <div style="width: 3rem; height: 2rem; background-color: black; border-radius: 5px; position: absolute;"></div>
-          <div style="width: 3rem; height: 2rem; background-color: black; border-radius: 5px; transform: rotate(60deg); position: absolute;"></div>
-          <div style="width: 3rem; height: 2rem; background-color: black; border-radius: 5px; transform: rotate(-60deg); position: absolute;"></div>
-          <i class="fas fa-toolbox text-3xl text-white absolute m-auto left-1/2" style="transform: translate(-50%, -50%);"></i>
-        </div>
-        <!-- /Hexagon Background -->
 
-        <h3 class="text-3xl mb-6 font-semibold"><%= s %><i class="fas fa-circle text-blue-500 ml-2" style="font-size: 8px;"></i></h3>
+        <div class="relative w-max">
+          <!-- Hexagon Background -->
+          <div class="relative" style="width: 3rem; height: 1rem;" >
+            <div style="width: 3rem; height: 2rem; background-color: black; border-radius: 5px; position: absolute;"></div>
+            <div style="width: 3rem; height: 2rem; background-color: black; border-radius: 5px; transform: rotate(60deg); position: absolute;"></div>
+            <div style="width: 3rem; height: 2rem; background-color: black; border-radius: 5px; transform: rotate(-60deg); position: absolute;"></div>
+          </div>
+          <!-- /Hexagon Background -->
+          <i class="<%= s[:class] %> text-2xl text-white absolute left-1/2" style="transform: translate(-50%, -50%)"></i>
+        </div>
+
+        <h3 class="text-3xl mb-6 font-semibold mt-14"><%= s[:name] %><i class="fas fa-circle text-blue-500 ml-2" style="font-size: 8px;"></i></h3>
         <p class="text-gray-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero exercitationem quaerat dolore dolores, maiores accusantium numquam explicabo.</p>
       </div>
     <% end %>
@@ -81,7 +84,7 @@
 <!-- /Reviews -->
 
 <!-- Second Company info -->
-<div class="flex w-full flex-col xl:flex-row">
+<div class="flex w-full flex-col xl:flex-row" id="aboutDo">
   <div class="min-w-1/2 bg-black text-white p-20 py-56">
     <h1 class="text-7xl mb-20">Hey there<i class="fas fa-circle text-blue-500 text-sm ml-2"></i></h1>
     <p class="text-xl mb-20">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia natus laudantium iusto ipsam pariatur. At excepturi similique rerum magnam voluptatibus cum eius odit temporibus, ab expedita, accusamus laborum pariatur modi.</p>
@@ -131,23 +134,31 @@
 <!-- /Employees -->
 
 <!-- Contact and location -->
-<div class="flex flex-col xl:flex-row">
+<div class="flex flex-col xl:flex-row" id="contact">
   <div class="xl:w-1/2 xl:text-left text-center w-full flex">
-    <div class="w-1/2 border-r flex flex-col p-20 text-left justify-center">
-      <i class="fas fa-toolbox text-3xl text-white bg-black p-2 mb-10 w-max"></i>
-      <h3 class="text-3xl mb-6 font-semibold">Email<i class="fas fa-circle text-blue-500 ml-2" style="font-size: 8px;"></i></h3>
-      <p class="text-gray-400">Something@citywide.construction</p>
-    </div>
+    <% @contact.each do |c|  %>
+      <div class="w-1/2 border-b py-auto p-20 flex flex-col justify-center border-l">
+        <div class="relative w-max">
+          <!-- Hexagon Background -->
+          <div class="relative" style="width: 3rem; height: 1rem;" >
+            <div style="width: 3rem; height: 2rem; background-color: black; border-radius: 5px; position: absolute;"></div>
+            <div style="width: 3rem; height: 2rem; background-color: black; border-radius: 5px; transform: rotate(60deg); position: absolute;"></div>
+            <div style="width: 3rem; height: 2rem; background-color: black; border-radius: 5px; transform: rotate(-60deg); position: absolute;"></div>
+          </div>
+          <!-- /Hexagon Background -->
+          <i class="<%= c[:class] %> text-2xl text-white absolute left-1/2" style="transform: translate(-50%, -50%)"></i>
+        </div>
 
-    <div class="w-1/2 border-b py-auto p-20 flex flex-col justify-center">
-      <i class="fas fa-toolbox text-3xl text-white bg-black p-2 mb-10 w-max"></i>
-      <h3 class="text-3xl mb-6 font-semibold">Phone<i class="fas fa-circle text-blue-500 ml-2" style="font-size: 8px;"></i></h3>
-      <p class="text-gray-400">Cell: 505-238-8610 <br> Pgr: 505-229-3016</p>
-    </div>
+        <h3 class="text-3xl mb-6 font-semibold mt-20"><%= c[:name] %><i class="fas fa-circle text-blue-500 ml-2" style="font-size: 8px;"></i></h3>
+        <p class="text-gray-400"><%= c[:info] %></p>
+      </div>
+    <% end %>
   </div>
 
-  <div class="xl:w-1/2 w-full h-full transform transition duration-500 hover:scale-150">
-    <%= image_tag "map.png" %>
+  <div class="xl:w-1/2 w-full h-full overflow-hidden">
+    <div class="transform transition duration-500 hover:scale-150">
+      <%= image_tag "map.png" %>
+    </div>
   </div>
 </div>
 <!-- /Contact and location -->
