@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @professions = [{ name: "Architure", class: "far fa-building" },
+    @professions = [{ name: "Architecture", class: "far fa-building" },
                     { name: "Construction", class: "fas fa-toolbox" },
                     { name: "Renovation", class: "fas fa-home" },
                     { name: "Engineering", class: "fas fa-layer-group" }]
