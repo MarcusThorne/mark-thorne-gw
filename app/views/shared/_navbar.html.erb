@@ -8,10 +8,12 @@
 <% end %>
 
 <nav class="sticky top-0 z-10 w-full h-full flex justify-around items-center shadow-sm py-5 bg-white mt-10">
-  <%= image_tag "logo.png" %>
+    <%= link_to root_path do %>
+      <%= image_tag "logo.png" %>
+    <% end %>
   <div>
-    <a class="mr-5 font-semibold" href="">Who We Are</a>
-    <a class="mr-5 font-semibold" href="">What We Do</a>
-    <a class="mr-5 font-semibold" href="">Get In Touch</a>
+    <a class="mr-5 font-semibold" href="#aboutUs">Who We Are</a>
+    <a class="mr-5 font-semibold" href="#aboutDo">What We Do</a>
+    <a class="mr-5 font-semibold" href="#contact">Get In Touch</a>
   </div>
 </nav>
