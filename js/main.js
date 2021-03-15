@@ -25,4 +25,5 @@ const carousel_2 = () => {
   setTimeout(carousel, 5000);
 }
 
-export { carousel, carousel_2 }
+carousel()
+carousel_2()
