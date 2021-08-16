@@ -15,10 +15,4 @@ class PagesController < ApplicationController
     @contact = [{ name: "Email", info: "<span>email@email.com</span>".html_safe, class: "far fa-envelope" },
                 { name: "Mobile", info: "<span>Mobile: 0121DO1 <br>Landline: 0121DO2</span>".html_safe, class: "fas fa-phone" }]
   end
-
-  def contact
-  end
-
-  def about_us
-  end
 end
